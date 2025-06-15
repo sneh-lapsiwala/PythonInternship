@@ -1,0 +1,6 @@
+# Ignore large or generated files
+audio/
+model/*.pkl
+__pycache__/
+*.pyc
+.env

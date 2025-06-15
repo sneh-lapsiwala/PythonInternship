@@ -22,16 +22,42 @@ page = st.sidebar.radio("Go to", ["Upload", "Record", "History", "About"])
 if "history" not in st.session_state:
     st.session_state.history = []
 
-def predict_emotion(audio_path, uploaded_file_name):
-    try:
-        model = joblib.load("model/emotion_model.pkl")
-    except FileNotFoundError:
-        st.error("Model file not found. Please train the model first.")
-        st.stop()
+@st.cache_resource
+def load_model():
+    return joblib.load("model/emotion_model.pkl")
 
-    features = extract_features_from_audio(audio_path).reshape(1, -1)
-    prediction = model.predict(features)[0]
-    proba = model.predict_proba(features)[0]
+@st.cache_data
+def extract_features_cached(path):
+    return extract_features_from_audio(path)
+
+def predict_emotion(audio_path, uploaded_file_name):
+
+    model = load_model()
+  
+    features = extract_features_cached(audio_path)
+
+    if features is None:
+        st.error("❌ Feature extraction failed (e.g., too short/silent audio).")
+        return
+
+    if features.shape[0] != 53:
+        st.error(f"❌ Extracted {features.shape[0]} features, but 53 were expected. Check the feature extraction code.")
+        return
+
+    features = features.reshape(1, -1)
+    scaler = joblib.load("model/scaler.pkl")
+    features_scaled = scaler.transform(features)
+
+    # ✅ If model expects PCA input, apply PCA
+    try:
+        pca = joblib.load("model/pca.pkl")
+        features_scaled = pca.transform(features_scaled)
+    except FileNotFoundError:
+        pass  # Do not apply PCA if not found
+
+    prediction = model.predict(features_scaled)[0]
+    proba = model.predict_proba(features_scaled)[0]
+
 
     st.audio(audio_path, format='audio/wav')
     st.success(f"🎯 Predicted Emotion: **{prediction.capitalize()}**")
