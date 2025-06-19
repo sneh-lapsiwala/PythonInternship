@@ -1,0 +1,49 @@
+# EDIT: rasa_project/stories.yml
+version: "3.1"
+stories:
+  - story: happy path
+    steps:
+      - intent: greeting
+      - action: utter_greet
+      - intent: technology
+      - action: action_provide_career_advice # This action will now use the dispatcher to utter specific advice
+
+  - story: exit path
+    steps:
+      - intent: greeting
+      - action: utter_greet
+      - intent: exit
+      - action: utter_goodbye
+
+  - story: user asks for general career advice
+    steps:
+      - intent: career_advice
+      - action: action_provide_career_advice # This action can also handle generic advice or ask for more info
+
+  - story: user asks about tech career specifically
+    steps:
+      - intent: technology
+      - action: action_provide_career_advice
+
+  - story: user asks about arts career specifically
+    steps:
+      - intent: arts
+      - action: action_provide_career_advice
+
+  - story: user asks about commerce career specifically
+    steps:
+      - intent: commerce
+      - action: action_provide_career_advice
+
+  - story: user asks about medical career specifically
+    steps:
+      - intent: medical
+      - action: action_provide_career_advice
+
+  - story: recommend career flow
+    steps:
+      - intent: career_advice # User asks for advice, which might lead to a recommendation
+      - action: action_recommend_career # This action will tell the user to upload a resume or give details.
+      # Here, Rasa would typically wait for user input (e.g., text, file upload) to then trigger further actions.
+      # This part of the story depends on how you want to prompt for resume upload in the Streamlit UI.
+      # For now, action_recommend_career just utters a message.

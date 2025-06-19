@@ -1,0 +1,26 @@
+streamlit>=1.32.0
+pandas>=1.5.0
+scikit-learn>=1.3.0
+plotly>=5.15.0
+SpeechRecognition
+pyaudio
+PyPDF2
+PyMuPDF
+pdfplumber
+pytesseract
+Pillow
+requests
+streamlit==1.24.0
+pandas==1.5.3
+scikit-learn==1.1.3
+plotly==5.15.0
+SpeechRecognition==3.8.1
+pyaudio==0.2.11
+PyPDF2==3.0.1
+PyMuPDF==1.23.0 # or pymupdf==1.23.1 if 1.23.0 gives error
+pdfplumber==0.7.4
+pytesseract==0.3.10
+Pillow==9.5.0
+requests==2.31.0
+# Rasa and its core dependencies (added separately for controlled installation)
+

@@ -1,0 +1,3 @@
+# ADD: rasa_project/endpoints.yml
+action_endpoint:
+  url: "http://localhost:5055/webhook" # Default Rasa SDK action server URL

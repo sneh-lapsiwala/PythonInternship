@@ -1,0 +1,117 @@
+{
+  "intents": [
+    {
+      "tag": "technology",
+      "education_levels": ["12th Pass", "Diploma", "BTech Student", "Graduate", "Postgraduate"],
+      "skills": ["Python", "Java", "Web Development", "AI", "ML", "Cybersecurity", "Cloud", "DevOps"],
+      "patterns": [
+        "I like coding",
+        "I'm interested in computers",
+        "I love programming",
+        "I want to work in tech",
+        "I am a graduate with experience in software development",
+        "My resume shows Python, Data Science, and AI skills",
+        "Subject report includes DBMS, Networking, Algorithms"
+      ],
+      "context": ["career_guidance", "resume_analysis"],
+      "responses": [
+        "Explore careers in Software Engineering, Data Science, or Cybersecurity.",
+        "Based on your background, you may also like DevOps, AI Research, or Cloud Architecture."
+      ],
+      "examples": [
+        {
+          "input": "I have done BTech in IT and love coding and AI",
+          "expected_output": "technology"
+        },
+        {
+          "input": "My resume shows skills in Python, cloud and machine learning",
+          "expected_output": "technology"
+        }
+      ]
+    },
+    {
+      "tag": "arts",
+      "education_levels": ["12th Pass", "Diploma", "Graduate"],
+      "skills": ["Painting", "Design", "Creativity", "Animation", "Photography", "Visual Arts"],
+      "patterns": [
+        "I enjoy painting",
+        "I'm into design and creativity",
+        "I love art",
+        "I want to be an artist",
+        "Resume shows UI/UX and digital painting skills",
+        "Subject document includes animation and sketching"
+      ],
+      "context": ["career_guidance"],
+      "responses": [
+        "Consider Graphic Design, Fine Arts, Animation, or Fashion Design.",
+        "Your creativity and design background suggest a good fit in the arts domain."
+      ],
+      "examples": [
+        {
+          "input": "I am a diploma holder in design and enjoy digital arts",
+          "expected_output": "arts"
+        }
+      ]
+    },
+    {
+      "tag": "commerce",
+      "education_levels": ["12th Pass", "Graduate", "Postgraduate"],
+      "skills": ["Accounting", "Finance", "Business", "Management", "Economics", "Auditing"],
+      "patterns": [
+        "I'm interested in business",
+        "I want to be an accountant",
+        "I like finance",
+        "I want to do MBA",
+        "Resume mentions auditing, Excel, and financial planning",
+        "Subject strengths: economics, taxation, business laws"
+      ],
+      "context": ["career_guidance"],
+      "responses": [
+        "You can go for Chartered Accountancy, BBA, MBA, or Banking roles.",
+        "Your interest in finance and management aligns with commerce careers."
+      ],
+      "examples": [
+        {
+          "input": "Graduate with B.Com, interested in business and finance",
+          "expected_output": "commerce"
+        }
+      ]
+    },
+    {
+      "tag": "medical",
+      "education_levels": ["12th Pass", "Graduate", "Postgraduate"],
+      "skills": ["Biology", "Pathology", "Nursing", "Pharmacy", "Anatomy", "Healthcare", "Clinical Practice"],
+      "patterns": [
+        "I want to be a doctor",
+        "I'm interested in biology",
+        "I like helping people medically",
+        "Resume shows nursing and pharma skills",
+        "Subject report: physiology, pathology, medical ethics"
+      ],
+      "context": ["career_guidance"],
+      "responses": [
+        "You can explore careers in MBBS, Nursing, Pharmacy, or Physiotherapy.",
+        "Your resume and subjects align with medical or paramedical fields."
+      ],
+      "examples": [
+        {
+          "input": "My interest is in pharmacy and human biology, currently in B.Sc",
+          "expected_output": "medical"
+        }
+      ]
+    },
+    {
+      "tag": "exit",
+      "patterns": [
+        "Bye",
+        "Quit",
+        "Exit",
+        "Stop"
+      ],
+      "responses": [
+        "Thank you for using Career Counsellor. Goodbye!"
+      ],
+      "examples": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+# EDIT: rasa_project/domain.yml
+version: "3.1"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greeting
+  - exit
+  - technology
+  - arts
+  - commerce
+  - medical
+  - career_advice # Ensure this is present and aligns with nlu.yml
+
+actions:
+  - action_recommend_career
+  - action_provide_career_advice # ADD THIS LINE
+
+responses:
+  utter_greet:
+    - text: "Hey! How can I help you today regarding your career?"
+    - text: "Hello! Welcome to the Career Counselor. How can I assist you?"
+
+  utter_goodbye:
+    - text: "Goodbye! Feel free to come back if you need more career advice."
+    - text: "See you later! Best of luck with your career journey."
+
+  utter_ask_stream_preference:
+    - text: "What academic stream are you interested in? (e.g., Technology, Arts, Commerce, Medical)"
+
+  # Specific responses for career advice based on stream
+  utter_technology_advice:
+    - text: "For a career in Technology, consider roles like Software Engineer, Data Scientist, Cybersecurity Analyst, or Web Developer. These often require strong analytical and problem-solving skills, and a background in computer science or related fields."
+    - text: "Technology offers diverse paths such as AI/ML engineering, Cloud Architecture, or Mobile App Development. Focus on continuous learning and practical projects."
+  
+  utter_arts_advice:
+    - text: "If Arts is your passion, explore careers in Graphic Design, Photography, Content Creation, or Performing Arts. Creativity, aesthetic sense, and communication skills are key."
+    - text: "Careers in Arts can range from Digital Animator to Museum Curator. Building a strong portfolio and networking are crucial in this field."
+
+  utter_commerce_advice:
+    - text: "In Commerce, you might pursue roles like Financial Analyst, Marketing Manager, Accountant, or Business Consultant. Strong numerical ability, strategic thinking, and communication are valuable assets."
+    - text: "Commerce offers dynamic careers in areas like Investment Banking, Supply Chain Management, or Entrepreneurship. Understanding market trends is vital."
+
+  utter_medical_advice:
+    - text: "For the Medical field, consider professions like Doctor, Nurse, Pharmacist, or Medical Researcher. This path demands strong scientific knowledge, empathy, and dedication."
+    - text: "The Medical sector is vast, including Physiotherapy, Dentistry, or Public Health. Lifelong learning and practical experience are essential."
+
+  utter_default_career_advice:
+    - text: "I can offer general career advice or guide you towards specific streams like Technology, Arts, Commerce, or Medical. What are you looking for?"
+    - text: "Career guidance is important. To help you better, could you tell me more about your interests or preferred academic stream?"
+
+  utter_generic_recommendation:
+    - text: "To give you the best career recommendation, I need to know more about your education, skills, and interests. Please provide your resume or tell me more about yourself."
+    - text: "I'm ready to recommend! Let's start by understanding your profile. Do you have a resume to upload, or would you like to share your details manually?"
+
+entities:
+  - career_field # Example entity if you wanted to extract fields like 'tech' directly from user input. Not strictly necessary with current intent structure.
