@@ -1,0 +1,13 @@
+# Python virtual environments
+.venv_rasa_stable/
+.venv/
+venv/
+
+# Rasa trained models
+models/
+
+# Other common Python ignores
+__pycache__/
+*.pyc
+*.env
+.env.*
