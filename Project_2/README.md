@@ -1,23 +1,152 @@
 # 🎓 AI Virtual Career Counsellor
+---
 
-An intelligent, interactive app to guide users towards suitable career paths using:
-- Text/Voice input
-- Resume parsing
-- Personality mapping (MBTI/RIASEC)
-- Career graphs and ML models
-- College/course recommendations
+```markdown
+# 🧠 AI Career Counsellor and Personality Mapper
+
+## 🚀 Project Overview
+This intelligent career counselling system leverages **Conversational AI (Rasa)** and a **Streamlit-based frontend** to help users discover suitable career paths. It integrates personality analysis, resume parsing, and chat interaction to generate tailored suggestions for careers, courses, and colleges.
 
 ---
 
-## 🚀 Features
-- 🎙️ Voice input support
-- 📄 Resume upload and analysis
-- 🧠 MBTI/RIASEC based career guidance
-- 📈 Career transition graphs
-- 🎓 Smart course & college recommendations
+## ✨ Key Features
 
-## 🛠️ Run Instructions
+- 🎙️ **Conversational AI (Rasa):** Chatbot that provides real-time, interactive guidance based on user input.
+- 🧩 **Personality Mapper:** Quiz-based assessment to align users with MBTI/RIASEC personality-career clusters.
+- 📄 **Resume Analyzer:** Automatically extracts skills, experience, and education from PDF resumes.
+- 🎯 **Personalized Recommendations:** Combines insights from personality, resume, and chat to suggest careers, courses, and colleges.
+- 📊 **Career Visualizations:** (Optional) Graphs and trend analysis to support career decisions.
+- 🗣️ **Voice Input (Optional):** Use voice interaction for a more natural experience.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend:** Streamlit
+- **Conversational AI:** Rasa
+- **Resume Parsing:** PyMuPDF, pdfplumber, pytesseract (for OCR)
+- **Speech Recognition (Optional):** `speechrecognition`
+- **ML / NLP:** scikit-learn, pandas, jmespath
+- **Visualization:** plotly, matplotlib
+- **Deployment Tools:** GitHub, virtualenv
+
+---
+
+## 📁 Project Structure
+
+```
+
+Project\_2/
+├── rasa\_project/              # Rasa NLU + Core project
+│   ├── actions/               # Custom actions (e.g., resume parsing)
+│   ├── data/                  # NLU intents, stories, rules
+│   ├── config.yml             # Rasa pipeline and policies
+│   └── domain.yml             # Bot domain (intents, slots, responses)
+├── streamlit\_app/             # (Optional) For modular Streamlit components
+├── app.py                     # Main Streamlit interface
+├── requirements.txt           # All Python dependencies
+├── .gitignore                 # Git exclusions
+├── data/                      # career\_map.csv, course/college DBs
+├── ml\_models/                 # Trained ML classifiers (optional)
+├── model/                     # Saved models (e.g., Rasa or classifiers)
+├── utils/                     # Utility functions (e.g., parser, preprocessor)
+└── scripts/                   # Scripts like train\_intent\_classifier.py
+
+````
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/sneh-lapsiwala/PythonInternship.git
+cd PythonInternship/Project_2
+````
+
+### 2. Set up Virtual Environment
+
+```bash
+python -m venv .venv_rasa_stable
+# On Windows:
+.\.venv_rasa_stable\Scripts\activate
+# On Linux/macOS:
+source .venv_rasa_stable/bin/activate
+```
+
+### 3. Install Python Dependencies
+
 ```bash
 pip install -r requirements.txt
-python scripts/train_intent_classifier.py
-streamlit run streamlit_app/app.py
+```
+
+---
+
+### 4. (Optional) Install Tesseract OCR
+
+If you’re using OCR features from `pytesseract`:
+
+* **Windows:** [Download here](https://github.com/tesseract-ocr/tesseract)
+* **macOS:** `brew install tesseract`
+* **Linux:** `sudo apt-get install tesseract-ocr`
+
+---
+
+## 🧪 Training & Running the Application
+
+### 🔧 Train the Rasa Model
+
+```bash
+cd rasa_project
+rasa train
+cd ..
+```
+
+### 💬 Run Rasa Action Server
+
+```bash
+cd rasa_project
+rasa run actions
+```
+
+### 🤖 Run Rasa Core Bot
+
+```bash
+rasa run --enable-api --cors "*"
+```
+
+### 🖥️ Run the Streamlit App
+
+Open a new terminal:
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## 📩 Contact
+
+* **Developer:** Sneh Lapsiwala
+* **GitHub:** [github.com/sneh-lapsiwala](https://github.com/sneh-lapsiwala)
+* **Email:** *\[Your Email Here]*
+
+---
+
+> 💡 *Feel free to fork, extend, and adapt this project to your own career guidance solutions!*
+
+````
+
+---
+
+Once you're done pasting this into `README.md`:
+
+### ✅ Final Git Commands
+
+```bash
+git add README.md
+git commit -m "📘 Add complete and structured README for AI Career Counsellor"
+git push origin main
+````
+
