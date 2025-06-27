@@ -11,3 +11,20 @@ __pycache__/
 *.pyc
 *.env
 .env.*
+
+# Virtual environment directories
+venv/
+Lib/
+Scripts/
+pyvenv.cfg
+
+# Streamlit app virtual env (if created inside the app folder)
+streamlit_app/Lib/
+streamlit_app/Scripts/
+streamlit_app/pyvenv.cfg
+
+# VS Code/IDE stuff (optional)
+.vscode/
+__pycache__/
+*.pyc
+.DS_Store
