@@ -21,3 +21,21 @@ def generate_sankey(df):
         link=dict(source=sources, target=targets, value=[1]*len(sources))
     )])
     return fig
+
+# utils/graph_utils.py
+
+import matplotlib.pyplot as plt
+import networkx as nx
+
+def draw_graph(graph_data):
+    G = nx.Graph()
+    
+    # Assuming graph_data is a dict with 'nodes' and 'edges'
+    G.add_nodes_from(graph_data['nodes'])
+    G.add_edges_from(graph_data['edges'])
+
+    plt.figure(figsize=(8, 6))
+    nx.draw(G, with_labels=True, node_color='skyblue', edge_color='gray', node_size=2000, font_size=15)
+    plt.title("Knowledge Graph")
+    plt.show()
+

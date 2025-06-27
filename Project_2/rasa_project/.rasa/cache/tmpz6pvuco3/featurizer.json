@@ -1,0 +1,56 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "arts": 0,
+        "back": 1,
+        "career_advice": 2,
+        "commerce": 3,
+        "exit": 4,
+        "greeting": 5,
+        "medical": 6,
+        "nlu_fallback": 7,
+        "out_of_scope": 8,
+        "restart": 9,
+        "session_start": 10,
+        "technology": 11
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_recommend_career": 13,
+        "action_provide_career_advice": 14,
+        "utter_arts_advice": 15,
+        "utter_ask_stream_preference": 16,
+        "utter_commerce_advice": 17,
+        "utter_default_career_advice": 18,
+        "utter_generic_recommendation": 19,
+        "utter_goodbye": 20,
+        "utter_greet": 21,
+        "utter_medical_advice": 22,
+        "utter_technology_advice": 23
+      },
+      "entities": {
+        "career_field": 0
+      },
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

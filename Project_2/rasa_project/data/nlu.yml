@@ -1,162 +1,58 @@
-# EDIT: rasa_project/nlu.yml
-version: "3.1"
+version: '3.1'
 nlu:
-  - intent: greeting
-    examples: |
-      - hi
-      - hello
-      - hey
-      - good morning
-      - good evening
-      - whats up
+- intent: technology
+  examples: '- I like coding
 
-  - intent: exit
-    examples: |
-      - goodbye
-      - bye
-      - see you later
-      - cya
-      - exit
-      - quit
+    - I''m interested in computers
 
-  - intent: technology
-    examples: |
-      - I am interested in technology.
-      - Tell me about tech careers.
-      - What careers are there in IT?
-      - Software development is my interest.
-      - I like coding.
-      - Tech field.
-      - Computer science.
-      - AI and ML.
-      - Cybersecurity.
-      - Web development.
-      - Mobile app development.
-      - Cloud computing.
-      - Data science.
-      - DevOps.
-      - I want to work with computers.
-      - What's hot in tech?
-      - Guide me on tech jobs.
-      - My passion is technology.
-      - I'm into software.
-      - Looking for tech career path.
-      - I'm good at programming.
-      - What's a good career in computers?
-      - How to get into data analytics?
-      - Tell me about IT jobs.
-      - Anything related to software?
-      - I want a career in tech.
-      - My skills are in coding.
-      - What can I do with a computer science degree?
-      - Info tech careers.
-      - Digital careers.
+    - I love programming
 
-  - intent: arts
-    examples: |
-      - I like arts.
-      - What careers are in arts?
-      - Creative jobs.
-      - Design careers.
-      - I want to be an artist.
-      - Photography.
-      - Graphic design.
-      - Fine arts.
-      - Music career.
-      - Writing and literature.
-      - Performing arts.
-      - Animation.
-      - Fashion design.
-      - Media production.
-      - Cultural jobs.
-      - Show me art-related careers.
-      - I'm a creative person.
-      - Careers for artists.
-      - What about humanities?
-      - My interest is in creative fields.
-      - I enjoy drawing.
-      - What can I do with an arts degree?
-      - Careers in design.
-      - Performing arts opportunities.
-      - Visual arts careers.
-      - I'm good at creative writing.
+    - I want to work in tech
 
-  - intent: commerce
-    examples: |
-      - I am interested in commerce.
-      - Business careers.
-      - What jobs are in commerce?
-      - Finance and accounting.
-      - Marketing and sales.
-      - Economics career.
-      - Management roles.
-      - Entrepreneurship.
-      - Banking sector.
-      - Stock market.
-      - Business administration.
-      - Supply chain.
-      - Human resources.
-      - Retail management.
-      - International business.
-      - Commerce stream careers.
-      - I want to start a business.
-      - Careers in the financial sector.
-      - My field is business.
-      - Help with commerce careers.
-      - What about finance jobs?
-      - How to get into marketing?
-      - Careers in economics.
-      - I like managing teams.
-      - Business development careers.
-      - What can I do with a commerce degree?
-      - Accounting careers.
+    - I am a graduate with experience in software development
 
-  - intent: medical
-    examples: |
-      - I like medical field.
-      - What careers are in medicine?
-      - Healthcare jobs.
-      - Doctor or nurse careers.
-      - Biology and health.
-      - Pharmacy.
-      - Dentistry.
-      - Medical research.
-      - Public health.
-      - Physiotherapy.
-      - Allied health sciences.
-      - Veterinary medicine.
-      - Clinical roles.
-      - Hospital jobs.
-      - Medical stream career.
-      - I want to help people medically.
-      - What are the options in healthcare?
-      - My interest is in health.
-      - Careers in life sciences.
-      - Guide me on medical professions.
-      - What about nursing?
-      - How to become a doctor?
-      - Careers in biomedical science.
-      - I'm interested in public health.
-      - What can I do with a medical degree?
-      - Pharma jobs.
+    - My resume shows Python, Data Science, and AI skills
 
-  - intent: career_advice
-    examples: |
-      - I need career advice.
-      - What should I do for my career?
-      - Guide me on my career path.
-      - Can you help me choose a career?
-      - I am confused about my career.
-      - Give me career guidance.
-      - Help me find a job path.
-      - Recommend a career.
-      - What career suits me?
-      - How to choose a career?
-      - I need some professional guidance.
-      - Provide career suggestions.
-      - Advise me on my future.
-      - Career consultation.
-      - What are my career options?
-      - I'm lost in my career choices.
-      - Help me plan my career.
-      - What kind of career should I pursue?
+    - Subject report includes DBMS, Networking, Algorithms'
+- intent: arts
+  examples: '- I enjoy painting
+
+    - I''m into design and creativity
+
+    - I love art
+
+    - I want to be an artist
+
+    - Resume shows UI/UX and digital painting skills
+
+    - Subject document includes animation and sketching'
+- intent: commerce
+  examples: '- I''m interested in business
+
+    - I want to be an accountant
+
+    - I like finance
+
+    - I want to do MBA
+
+    - Resume mentions auditing, Excel, and financial planning
+
+    - Subject strengths: economics, taxation, business laws'
+- intent: medical
+  examples: '- I want to be a doctor
+
+    - I''m interested in biology
+
+    - I like helping people medically
+
+    - Resume shows nursing and pharma skills
+
+    - Subject report: physiology, pathology, medical ethics'
+- intent: exit
+  examples: '- Bye
+
+    - Quit
+
+    - Exit
+
+    - Stop'
